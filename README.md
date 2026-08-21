@@ -96,13 +96,13 @@ Wallet scanning is threaded at 50 concurrent workers with per-request timeouts �
 
 ## Stack
 
-**Backend** — Python 3.14, threaded HTTP server, ~3,200 lines
-**Frontend** — Chrome Manifest V3 extension, vanilla JS, ~1,100 lines, zero dependencies
-**On-chain** — Helius RPC + Helius Enhanced API
-**Market data** — DexScreener
-**Narrative** — Mistral Large
+- **Backend** — Python 3.14, threaded HTTP server, ~3,700 lines
+- **Frontend** — Chrome Manifest V3 extension, vanilla JS, ~1,100 lines, zero dependencies
+- **On-chain** — Helius RPC + Helius Enhanced API
+- **Market data** — DexScreener
+- **Narrative** — Mistral Large
 
-No framework, no build step, no bundler. The extension loads unpacked and the server runs with `python spiderAK.py`.
+No framework, no build step, no bundler. The extension loads unpacked and the server runs with `python spider.py`.
 
 ---
 
