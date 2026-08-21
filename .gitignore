@@ -1,0 +1,12 @@
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.log
+
+# Never allow source or data into the public repo
+*.py
+wallets*.csv
+.env
+.env.*
