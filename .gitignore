@@ -6,7 +6,7 @@ desktop.ini
 *.log
 
 # Never allow source or data into the public repo
-*.py
+
 wallets*.csv
 .env
 .env.*
