@@ -128,7 +128,7 @@ It is part of **iSight**, a suite of trading intelligence instruments:
 
 ## Source access
 
-The full source is kept in a private repository. It contains live infrastructure credentials and a proprietary wallet database that represents the bulk of the tool's value.
+The intelligence layer — the four-module engine that decides what a token is — is published in [`src/`](src/). The remaining source is kept in a private repository. It contains live infrastructure credentials and a proprietary wallet database that represents the bulk of the tool's value.
 
 **I'm happy to grant read access on request** — get in touch and I'll add you.
 
