@@ -4,7 +4,7 @@
 
 Spider answers one question, fast: *is enough supply sitting in dangerous hands to dump this token right now?*
 
-It runs as a browser extension that injects a live intelligence panel directly into the trading platforms a trader already uses — Axiom, DexScreener, Photon, GMGN — backed by a local Python engine that reads on-chain state directly from Solana.
+It runs as a browser extension that injects a live intelligence panel directly into the trading platforms a trader already uses — Axiom, DexScreener, Photon, GMGN: backed by a local Python engine that reads on-chain state directly from Solana.
 
 ![Spider panel](assets/preview.webp)
 
@@ -22,8 +22,7 @@ Spider surfaces it in the tab the trader is already looking at, in under a scan 
 
 ## What it does
 
-| | |
-|---|---|
+
 | **Supply concentration** | Every wallet above 5% of supply, resolved and ranked. No exemptions, no trust categories. |
 | **Known-wallet matching** | Cross-references holders against a curated database of ~940 tagged Solana wallets — livestreamers, KOLs, developers, market makers, smart money. |
 | **Token state classification** | Deterministic classification into one of seven states: `TRAP_SET`, `ACTIVE_THREAT`, `DISTRIBUTION`, `CONTESTED`, `CLEAN_ACCUMULATION`, `FARM_DEAD`, `UNKNOWN`. |
