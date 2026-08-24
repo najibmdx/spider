@@ -23,11 +23,20 @@ Spider surfaces it in the tab the trader is already looking at, in under a scan 
 ## What it does
 
 
-| **Supply concentration** | Every wallet above 5% of supply, resolved and ranked. No exemptions, no trust categories. |
-| **Known-wallet matching** | Cross-references holders against a curated database of ~940 tagged Solana wallets — livestreamers, KOLs, developers, market makers, smart money. |
-| **Token state classification** | Deterministic classification into one of seven states: `TRAP_SET`, `ACTIVE_THREAT`, `DISTRIBUTION`, `CONTESTED`, `CLEAN_ACCUMULATION`, `FARM_DEAD`, `UNKNOWN`. |
-| **Lifecycle awareness** | A bonding-curve token and a graduated AMM token are different animals. Signals are filtered per lifecycle mode so pre-migration tokens aren't scored against metrics that don't exist yet. |
-| **Narrative synthesis** | An LLM turns the computed picture into two or three sentences of plain trader English — and never touches a number. |
+**Supply concentration** 
+Every wallet above 5% of supply, resolved and ranked. No exemptions, no trust categories. |
+
+**Known-wallet matching** 
+Cross-references holders against a curated database of ~940 tagged Solana wallets - livestreamers, KOLs, developers, market makers, smart money. |
+
+**Token state classification**
+Deterministic classification into one of seven states: `TRAP_SET`, `ACTIVE_THREAT`, `DISTRIBUTION`, `CONTESTED`, `CLEAN_ACCUMULATION`, `FARM_DEAD`, `UNKNOWN`. 
+
+**Lifecycle awareness**
+A bonding-curve token and a graduated AMM token are different animals. Signals are filtered per lifecycle mode so pre-migration tokens aren't scored against metrics that don't exist yet.
+
+**Narrative synthesis**
+An LLM turns the computed picture into two or three sentences of plain trader English — and never touches a number.
 
 ---
 
@@ -50,8 +59,6 @@ flowchart LR
 ```
 
 The extension is a thin client. It finds the mint address on the page, posts it to `localhost:8765`, and renders whatever comes back. All intelligence lives in the Python engine.
-
----
 
 ## Engineering decisions worth explaining
 
@@ -91,19 +98,19 @@ Signature pagination runs newest-first, which means the graduation window on an 
 
 Wallet scanning is threaded at 50 concurrent workers with per-request timeouts — enough to saturate a paid RPC tier without tripping rate limits.
 
----
+
 
 ## Stack
 
-- **Backend** — Python 3.14, threaded HTTP server, ~3,700 lines
-- **Frontend** — Chrome Manifest V3 extension, vanilla JS, ~1,100 lines, zero dependencies
-- **On-chain** — Helius RPC + Helius Enhanced API
-- **Market data** — DexScreener
-- **Narrative** — Mistral Large
+**Backend** — Python 3.14, threaded HTTP server, ~3,700 lines
+**Frontend** — Chrome Manifest V3 extension, vanilla JS, ~1,100 lines, zero dependencies
+**On-chain** — Helius RPC + Helius Enhanced API
+**Market data** — DexScreener
+**Narrative** — Mistral Large
 
 No framework, no build step, no bundler. The extension loads unpacked and the server runs with `python spider.py`.
 
----
+
 
 ## Design
 
@@ -111,7 +118,7 @@ Spider renders as a dark trading cockpit — deep navy base, neon-pastel signal 
 
 <!-- Add 2–3 more screenshots here: instant scan, deep scan, a CRITICAL state -->
 
----
+
 
 ## Project status
 
@@ -119,18 +126,18 @@ Spider is a working production tool. It runs daily against live tokens and has f
 
 It is part of **iSight**, a suite of trading intelligence instruments:
 
-- **Spider** — on-chain dump risk (this project)
-- **Beat** — social and sentiment layer
-- **Tide**, **Forest**, **Memecoin Analyzer** — supporting instruments
+**Spider** — on-chain dump risk (this project)
+**Beat** — social and sentiment layer
+**Tide**, **Forest**, **Memecoin Analyzer** — supporting instruments
 
----
+
 
 ## Source access
 
-The intelligence layer — the four-module engine that decides what a token is — is published in [`src/`](src/). The remaining source is kept in a private repository. It contains live infrastructure credentials and a proprietary wallet database that represents the bulk of the tool's value.
+The intelligence layer - the four-module engine that decides what a token is - is published in [`src/`](src/). The remaining source is kept in a private repository. It contains live infrastructure credentials and a proprietary wallet database that represents the bulk of the tool's value.
 
 **I'm happy to grant read access on request** — get in touch and I'll add you.
 
----
+
 
 <sub>© Jeeps. All rights reserved. This repository is documentation only; no licence is granted to the Spider source, design or wallet data.</sub>
